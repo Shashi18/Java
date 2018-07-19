@@ -10,7 +10,10 @@ public class Main{
         b.addNode(85,"Oii Maa");
 
         b.inOrderTraverse(b.root);
+        System.out.println("  ");
         b.preOrderTraverse(b.root);
+        System.out.println("  ");
+        b.postOrderTraverse(b.root);
         
     }
     
@@ -47,6 +50,13 @@ public class Main{
             }
         }
         
+        public void postOrderTraverse(Node point){
+            if(point != null){
+                postOrderTraverse(point.leftChild);
+                postOrderTraverse(point.rightChild);
+                System.out.println(point);
+            }
+        }
         public void addNode(int key, String name){
             Node n = new Node(key, name);
             if(root == null)
